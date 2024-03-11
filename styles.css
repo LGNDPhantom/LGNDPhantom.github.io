@@ -1,0 +1,15 @@
+/* styles.css */
+
+/* Set the background color to charcoal gray */
+body {
+    background-color: #333;
+    color: #fff; /* White text color */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 100px 0; /* Add some vertical spacing */
+}
+
+/* Style the "Welcome Back" heading */
+h1 {
+    font-size: 36px; /* Decently big font size */
+}
