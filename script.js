@@ -20,6 +20,9 @@ function openCategory(categoryName) {
         }
     });
 }
-
+function navigateToFormPage() {
+    // Redirect to the form page (replace 'form.html' with your actual form page URL)
+    window.location.href = 'add_category.php';
+}
 // Initially show the first category
 openCategory('Category1');
