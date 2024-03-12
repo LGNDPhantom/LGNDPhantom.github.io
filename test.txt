@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Tabs</title>
+    <style>
+        /* Style the tab container */
+        .tab-container {
+            display: flex;
+        }
+
+        /* Style the tab buttons */
+        .tab-button {
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Style the active tab button */
+        .tab-button.active {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab-container">
+        <!-- Replace with your actual category data -->
+        <button class="tab-button active" onclick="openCategory('Category1')">
+            <img src="category1.jpg" alt="Category 1 Icon">
+            Category 1
+        </button>
+        <button class="tab-button" onclick="openCategory('Category2')">
+            <img src="category2.jpg" alt="Category 2 Icon">
+            Category 2
+        </button>
+        <!-- Add more buttons for other categories -->
+    </div>
+
+    <!-- Content for each category -->
+    <div id="Category1" class="tab-content">
+        <!-- Display content for Category 1 -->
+        <h3>Category 1</h3>
+        <p>Category 1 description goes here.</p>
+    </div>
+    <div id="Category2" class="tab-content">
+        <!-- Display content for Category 2 -->
+        <h3>Category 2</h3>
+        <p>Category 2 description goes here.</p>
+    </div>
+
+    <script>
+        // Function to switch tabs
+        function openCategory(categoryName) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            const tabButtons = document.querySelectorAll('.tab-button');
+
+            // Hide all tab contents
+            tabContents.forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Show the selected tab content
+            document.getElementById(categoryName).style.display = 'block';
+
+            // Update active tab button
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+                if (button.innerText === categoryName) {
+                    button.classList.add('active');
+                }
+            });
+        }
+
+        // Initially show the first category
+        openCategory('Category1');
+    </script>
+</body>
+</html>
